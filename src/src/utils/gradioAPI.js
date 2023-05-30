@@ -7,7 +7,8 @@ export default class GradioAPI {
     constructor() {
         this.apiBaseURL = common.apiUrl()
         this.api = axios.create({
-            baseURL: this.apiBaseURL,
+            // baseURL: location.pathname.slice(1) + this.apiBaseURL,
+            baseURL: window.location.origin + window.location.pathname,
             timeout: 60000,
             headers: {
                 "Content-Type": "application/json",
